@@ -1,6 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Trade Network Limited - Lo-Fi Mockup
 
-## Getting Started
+This project is a high-fidelity representation of a **Lo-Fi Wireframe Mockup** for Trade Network Limited. Designed to focus purely on layout, user flow, and structure, this prototype acts as a functional shell for a standard e-commerce/corporate website.
+
+## 🚀 Overview
+
+The concept behind this project is to build out a full Next.js application that looks and functions exactly like a wireframe tool (e.g., Balsamiq or Whimsical). It utilizes:
+
+- Grayscale/minimalist color palettes
+- Consistent "Image Placeholder" components complete with watermarks
+- Lorem Ipsum typography specifically designed to not distract the viewer
+- Smooth scroll-reveal animations to give life to the wireframe
+
+## 📸 Page Layouts
+
+### Home Page
+
+A sweeping hero section with an abstract vector pattern, leading into a slider of featured products, a testimonials carousel, and a clean logo/gallery band.
+![Home Page](./docs/screenshots/home.png)
+
+### About Us
+
+Streamlined company story layout and core values presentation, stripped of real copy to focus purely on structural presentation.
+![About Us](./docs/screenshots/about.png)
+
+### Discover (Products)
+
+A vertical showcase of product cards demonstrating how alternating grid layouts function in the design system.
+![Discover Page](./docs/screenshots/discover.png)
+
+### Contact
+
+A functional contact shell demonstrating a dual-column information and form layout.
+![Contact Page](./docs/screenshots/contact.png)
+
+## 🛠 Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Styling**: Vanilla CSS (CSS Modules & Global Styles)
+- **Icons**: Lucide React
+- **Animations**: Custom IntersectionObserver-based hooks for standard page reveals
+
+## 🏃‍♂️ Getting Started
 
 First, run the development server:
 
@@ -8,29 +48,15 @@ First, run the development server:
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🏗 Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To build the project for production, run:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm start
+```
