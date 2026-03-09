@@ -59,7 +59,7 @@ export default function AboutPage() {
             </h1>
           </RevealOnScroll>
           <RevealOnScroll className="reveal-up" delay={200}>
-            <p style={{ fontSize: '1.25rem', lineHeight: 1.6, color: 'var(--text-secondary)' }}>
+            <p style={{ fontSize: '1.25rem', lineHeight: 1.6 }}>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
             </p>
           </RevealOnScroll>

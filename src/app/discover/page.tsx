@@ -108,9 +108,9 @@ export default function DiscoverPage() {
       <section style={{ padding: '6rem 0', textAlign: 'center' }}>
         <div className="container" style={{ maxWidth: '800px' }}>
           <RevealOnScroll className="reveal-up">
-            <h2 style={{ fontSize: '2.5rem', color: 'var(--accent-dark)', marginBottom: '1.5rem', fontWeight: 800 }}>
+            <h3 style={{ marginBottom: '0.5rem', color: 'var(--accent-dark)' }}>
               Lorem ipsum dolor sit amet
-            </h2>
+            </h3>
           </RevealOnScroll>
           <RevealOnScroll className="reveal-up" delay={100}>
             <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
@@ -141,8 +141,8 @@ export default function DiscoverPage() {
 
                 {/* Text Content Right */}
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  <h3 style={{ fontSize: '1.75rem', color: 'var(--accent-dark)', fontWeight: 700 }}>{card.title}</h3>
-                  <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>{card.description}</p>
+                  <h3 style={{ color: 'var(--accent-dark)' }}>{card.title}</h3>
+                  <p>{card.description}</p>
                   
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--text-tertiary)', fontSize: '0.875rem' }}>

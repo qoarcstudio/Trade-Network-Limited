@@ -35,14 +35,13 @@ export default function Testimonials() {
       <div className="container flex flex-col items-center">
         
         <RevealOnScroll className="reveal-up">
-          <h2 style={{ fontSize: '2.5rem', color: '#5b6b80', marginBottom: '1rem', fontWeight: 800 }}>
-             What our clients have to say
-          </h2>
-        </RevealOnScroll>
-        <RevealOnScroll className="reveal-up" delay={100}>
-          <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', marginBottom: '3rem', lineHeight: 1.6 }}>
-             Lorem ipsum dolor sit amet consectetur adipiscing elit mattis sit phasellus mollis sit aliquam sit nullam.
-          </p>
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <span className="badge">Testimonials</span>
+            <h2 style={{ color: 'var(--text-primary)', marginBottom: '1rem' }}>What People Say</h2>
+            <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
+              Discover why businesses trust Trade Network Limited for their commerce and trade solutions.
+            </p>
+          </div>
         </RevealOnScroll>
 
         {/* Quote Icon */}

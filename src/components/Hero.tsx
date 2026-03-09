@@ -47,14 +47,7 @@ export default function Hero() {
 
       <RevealOnScroll className="reveal-up">
         <div className="container flex flex-col items-center" style={{ maxWidth: '800px' }}>
-          <h1 style={{ 
-             fontSize: '3.5rem', 
-             fontWeight: 800, 
-             color: '#121212', 
-             lineHeight: 1.1, 
-             marginBottom: '1.5rem',
-             letterSpacing: '-0.03em'
-          }}>
+          <h1 style={{ color: '#121212', marginBottom: '1.5rem', letterSpacing: '-0.03em' }}>
             Arcu Suscipit Massa Aliquam Proin Amet
           </h1>
           <p style={{ 
@@ -66,14 +59,7 @@ export default function Hero() {
           }}>
             Luctus felis sit lectus tristique diam ornare bibendum. Arcu auctor suspendisse luctus amet bibendum pellentesque lorem. Malesuada lobortis tristique tortor,
           </p>
-          <button className="btn btn-primary" style={{ 
-             padding: '1rem 3rem', 
-             fontSize: '1rem', 
-             fontWeight: 600, 
-             borderRadius: '4px',
-             background: '#4966af',
-             color: 'white'
-          }}>
+          <button className="btn btn-primary" style={{ padding: '1rem 3rem' }}>
             Get Started
           </button>
         </div>
