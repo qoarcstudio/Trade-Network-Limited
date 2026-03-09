@@ -29,7 +29,7 @@ export default function ContactPage() {
     <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: 'var(--bg-primary)' }}>
       <Header />
 
-      <section style={{ flex: 1, padding: '6rem 2rem' }}>
+      <section style={{ flex: 1, padding: '6rem 0' }}>
         <div className="container">
           
           {/* Hero / Title Section */}
@@ -48,7 +48,7 @@ export default function ContactPage() {
             </RevealOnScroll>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '4rem' }}>
+          <div className="grid-responsive-2">
             
             {/* Left Column: Contact Info */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
@@ -92,9 +92,9 @@ export default function ContactPage() {
 
             {/* Right Column: Contact Form */}
             <RevealOnScroll className="reveal-right" delay={300}>
-              <div style={{ background: '#ffffff', padding: '3.5rem', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-light)', boxShadow: 'var(--shadow-md)' }}>
+              <div style={{ background: '#ffffff', padding: '2rem', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-light)', boxShadow: 'var(--shadow-md)' }}>
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+                  <div className="grid-responsive-2">
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                       <label htmlFor="name" style={{ fontWeight: 600, fontSize: '0.875rem' }}>First Name</label>
                       <input 

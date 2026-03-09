@@ -51,7 +51,7 @@ export default function ProductPage() {
     <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: 'var(--bg-primary)' }}>
       <Header />
 
-      <section style={{ padding: '4rem 2rem' }}>
+      <section style={{ padding: '4rem 0' }}>
         <div className="container">
           
           {/* Breadcrumbs */}
@@ -63,7 +63,7 @@ export default function ProductPage() {
             <span style={{ color: 'var(--accent-blue)', fontWeight: 600 }}>{product.name}</span>
           </nav>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '5rem', alignItems: 'start' }}>
+          <div className="grid-responsive-2" style={{ alignItems: 'start' }}>
             
             {/* Left: Image Gallery */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -98,7 +98,7 @@ export default function ProductPage() {
               </RevealOnScroll>
               
               <RevealOnScroll className="reveal-right" delay={100}>
-                <h1 style={{ color: 'var(--accent-dark)', fontSize: '3rem', lineHeight: 1.1 }}>{product.name}</h1>
+                <h1 style={{ color: 'var(--accent-dark)' }}>{product.name}</h1>
               </RevealOnScroll>
 
               <RevealOnScroll className="reveal-right" delay={200}>
@@ -120,13 +120,13 @@ export default function ProductPage() {
               <RevealOnScroll className="reveal-right" delay={400}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', padding: '2rem 0', borderTop: '1px solid var(--border-light)', borderBottom: '1px solid var(--border-light)' }}>
                   
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', background: '#fff', border: '1px solid var(--border-medium)', borderRadius: 'var(--radius-md)', padding: '0.5rem' }}>
+                  <div className="flex items-center gap-md flex-col-md">
+                    <div style={{ display: 'flex', alignItems: 'center', background: '#fff', border: '1px solid var(--border-medium)', borderRadius: 'var(--radius-md)', padding: '0.5rem', width: 'fit-content' }}>
                       <button onClick={() => setQuantity(Math.max(1, quantity - 1))} style={{ width: '2.5rem', height: '2.5rem', display: 'grid', placeItems: 'center', background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.25rem' }}>-</button>
                       <span style={{ width: '3rem', textAlign: 'center', fontWeight: 700 }}>{quantity}</span>
                       <button onClick={() => setQuantity(quantity + 1)} style={{ width: '2.5rem', height: '2.5rem', display: 'grid', placeItems: 'center', background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.25rem' }}>+</button>
                     </div>
-                    <button className="btn btn-primary" style={{ flex: 1, height: '3.5rem' }}>Add to Cart</button>
+                    <button className="btn btn-primary" style={{ flex: 1, height: '3.5rem', width: '100%' }}>Add to Cart</button>
                   </div>
 
                   <button className="btn" style={{ height: '3.5rem', background: 'var(--accent-dark)', color: '#fff' }}>Buy Now</button>
@@ -146,7 +146,7 @@ export default function ProductPage() {
 
           {/* Details Tabs */}
           <div style={{ marginTop: '6rem' }}>
-            <div style={{ display: 'flex', gap: '3rem', borderBottom: '1px solid var(--border-light)', marginBottom: '3rem' }}>
+            <div style={{ display: 'flex', gap: '2rem', borderBottom: '1px solid var(--border-light)', marginBottom: '3rem', overflowX: 'auto' }}>
               {['description', 'specifications', 'reviews'].map(tab => (
                 <button 
                   key={tab}
@@ -173,7 +173,7 @@ export default function ProductPage() {
                       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
                       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                     </p>
-                    <ul style={{ marginTop: '1.5rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                    <ul className="grid-responsive-2" style={{ marginTop: '1.5rem' }}>
                       <li>✓ Premium quality materials</li>
                       <li>✓ Ergonomic design for comfort</li>
                       <li>✓ Easy assembly process</li>

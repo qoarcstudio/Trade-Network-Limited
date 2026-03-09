@@ -7,10 +7,7 @@ export default function Footer() {
     <footer style={{ background: '#ffffff', paddingTop: '8rem', paddingBottom: '4rem' }}>
       <div className="container">
         {/* Main Footer Content: 4 Columns */}
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: '1fr 1fr 1fr 1.5fr', 
-          gap: '4rem', 
+        <div className="grid-responsive-4" style={{ 
           paddingBottom: '5rem',
           borderBottom: '1px solid var(--border-light)',
           marginBottom: '3rem'
@@ -107,7 +104,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <RevealOnScroll className="reveal-up" delay={400}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div className="flex justify-between items-center flex-col-md gap-md" style={{ textAlign: 'center' }}>
             {/* Logo Left */}
             <div style={{ display: 'flex', alignItems: 'center', color: '#4966af', gap: '0.75rem' }}>
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">

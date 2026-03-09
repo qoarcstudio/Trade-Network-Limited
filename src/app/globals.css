@@ -188,6 +188,10 @@ p {
 
 
 /* Layout Utilities */
+.hero-section {
+  padding: 12rem 2rem 10rem;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -285,4 +289,75 @@ p {
 * {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+/* --- Responsive Utility Classes --- */
+
+/* Base Grid Layouts */
+.grid-responsive-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.grid-responsive-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.grid-responsive-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* Tablet Output (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .grid-responsive-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Output (max-width: 768px) */
+@media (max-width: 768px) {
+  .grid-responsive-2,
+  .grid-responsive-3,
+  .grid-responsive-4 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .flex-col-md {
+    flex-direction: column !important;
+  }
+
+  .text-center-md {
+    text-align: center !important;
+  }
+  
+  .hidden-md {
+    display: none !important;
+  }
+
+  .items-start-md {
+    align-items: flex-start !important;
+  }
+  
+  .gap-md {
+    gap: 1.5rem !important;
+  }
+
+  .hero-section {
+    padding: 8rem 1rem 6rem;
+  }
+
+  /* Responsive Typography Adjustments */
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+  
+  .container {
+    padding: 0 1rem;
+  }
 }

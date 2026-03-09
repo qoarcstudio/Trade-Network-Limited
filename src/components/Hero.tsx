@@ -2,11 +2,10 @@ import RevealOnScroll from './RevealOnScroll';
 
 export default function Hero() {
   return (
-    <section style={{ 
+    <section className="hero-section" style={{ 
        position: 'relative', 
        width: '100%', 
        minHeight: 'calc(100vh - 80px)',
-       padding: '12rem 2rem 10rem', 
        display: 'flex', 
        flexDirection: 'column', 
        alignItems: 'center', 

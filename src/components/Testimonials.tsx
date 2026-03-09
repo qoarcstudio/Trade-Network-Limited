@@ -53,7 +53,7 @@ export default function Testimonials() {
         </RevealOnScroll>
 
         {/* Slider Area */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '3rem', width: '100%', maxWidth: '900px' }}>
+        <div className="flex items-center justify-center flex-col-md gap-md" style={{ width: '100%', maxWidth: '900px' }}>
            
            <RevealOnScroll className="reveal-left" delay={300}>
              <button onClick={prevSlide} style={{ 

@@ -48,7 +48,7 @@ export default function Products() {
       <div className="container">
         
         <RevealOnScroll className="reveal-up">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3.5rem' }}>
+          <div className="flex justify-between items-center flex-col-md items-start-md gap-md" style={{ marginBottom: '3.5rem' }}>
             <div>
               <span className="badge">New Arrivals</span>
               <h2 style={{ fontSize: '2.5rem', color: 'var(--text-primary)', marginBottom: '0.75rem', fontWeight: 800 }}>Featured Products</h2>
@@ -56,7 +56,7 @@ export default function Products() {
                 Explore our latest collection of premium tradeCommerce solutions built for modern businesses.
               </p>
             </div>
-            <div style={{ display: 'flex', gap: '1rem' }}>
+            <div style={{ display: 'flex', gap: '1rem', alignSelf: 'flex-start' }}>
                <button 
                   onClick={() => scroll('left')}
                   disabled={!canScrollLeft}

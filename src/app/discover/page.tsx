@@ -52,9 +52,9 @@ export default function DiscoverPage() {
       <Header />
 
       {/* Hero Slider Section */}
-      <section style={{ padding: '4rem 0', background: 'var(--bg-primary)' }}>
+      <section className="hero-section" style={{ background: 'var(--bg-primary)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '4rem', alignItems: 'center' }}>
+          <div className="grid-responsive-2" style={{ alignItems: 'center' }}>
             
             {/* Left: Product Image */}
             <RevealOnScroll className="reveal-left">
@@ -62,11 +62,11 @@ export default function DiscoverPage() {
                 <Placeholder ratio="16/9" />
               </div>
             </RevealOnScroll>
-
+ 
             {/* Right: Text Content */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <div className="flex flex-col items-start-md" style={{ gap: '1.5rem' }}>
               <RevealOnScroll className="reveal-right">
-                <h1 style={{ fontSize: '3.5rem', lineHeight: 1.1, color: 'var(--accent-dark)', fontWeight: 800 }}>
+                <h1 style={{ color: 'var(--accent-dark)' }}>
                   {FEATURED_ITEMS[activeSlide].title}
                 </h1>
               </RevealOnScroll>
@@ -82,7 +82,7 @@ export default function DiscoverPage() {
               </RevealOnScroll>
             </div>
           </div>
-
+ 
           {/* Pagination Dots */}
           <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', marginTop: '3rem' }}>
             {FEATURED_ITEMS.map((_, idx) => (
@@ -127,17 +127,15 @@ export default function DiscoverPage() {
           {CONTENT_CARDS.map((card, i) => (
             <RevealOnScroll key={i} className="reveal-up" delay={i * 100}>
               <div 
-                className="content-card"
+                className="content-card flex flex-col-md gap-md"
                 style={{ 
-                  display: 'flex', 
-                  gap: '3rem', 
                   alignItems: 'center',
                   background: '#ffffff',
                   transition: 'transform 0.3s ease'
                 }}
               >
                 {/* Image Left */}
-                <div style={{ flex: '0 0 40%', aspectRatio: '4/3', borderRadius: 'var(--radius-md)', overflow: 'hidden', border: '1px solid var(--border-light)' }}>
+                <div style={{ width: '100%', maxWidth: '400px', aspectRatio: '4/3', borderRadius: 'var(--radius-md)', overflow: 'hidden', border: '1px solid var(--border-light)' }}>
                   <Placeholder ratio="4/3" />
                 </div>
 

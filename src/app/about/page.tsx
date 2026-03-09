@@ -44,8 +44,7 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <section style={{ 
-        padding: '8rem 2rem', 
+      <section className="hero-section" style={{ 
         background: 'linear-gradient(135deg, rgba(73, 102, 175, 0.05) 0%, rgba(255, 255, 255, 0) 100%)',
         textAlign: 'center',
         borderBottom: '1px solid var(--border-light)'
@@ -55,7 +54,7 @@ export default function AboutPage() {
             <span className="badge">Our Mission</span>
           </RevealOnScroll>
           <RevealOnScroll className="reveal-up" delay={100}>
-            <h1 style={{ color: 'var(--accent-dark)', fontSize: '4rem', marginBottom: '2rem', lineHeight: 1.1 }}>
+            <h1 style={{ color: 'var(--accent-dark)', marginBottom: '2rem' }}>
               Lorem ipsum dolor sit amet consectetur
             </h1>
           </RevealOnScroll>
@@ -68,8 +67,8 @@ export default function AboutPage() {
       </section>
 
       {/* Story Section */}
-      <section style={{ padding: '8rem 2rem' }}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+      <section style={{ padding: '8rem 0' }}>
+        <div className="container grid-responsive-2" style={{ alignItems: 'center' }}>
           <RevealOnScroll className="reveal-left">
             <div style={{ position: 'relative' }}>
               <div style={{ 
@@ -121,8 +120,8 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section style={{ padding: '6rem 2rem', background: 'var(--accent-dark)', color: 'white' }}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '4rem', textAlign: 'center' }}>
+      <section style={{ padding: '6rem 0', background: 'var(--accent-dark)', color: 'white' }}>
+        <div className="container grid-responsive-4" style={{ textAlign: 'center' }}>
           {STATS.map((stat, i) => (
             <RevealOnScroll key={i} className="reveal-up" delay={i * 100}>
               <div>
@@ -146,7 +145,7 @@ export default function AboutPage() {
             </RevealOnScroll>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '3rem' }}>
+          <div className="grid-responsive-3">
             {VALUES.map((val, i) => (
               <RevealOnScroll key={i} className="reveal-up" delay={i * 150}>
                 <div style={{ 
