@@ -13,9 +13,8 @@ src/
 │   ├── layout.tsx          # Root layout (HTML shell, Outfit font, global CSS)
 │   ├── globals.css         # Design tokens, utilities, responsive breakpoints
 │   ├── page.tsx            # Home page  →  /
-│   ├── about/page.tsx      # Legacy About page (unused in nav)
-│   ├── about-us/page.tsx   # About page →  /about-us (former discover)
-│   ├── contact/page.tsx    # Contact    →  /contact
+│   ├── about-us/page.tsx   # About Us    →  /about-us (story-driven layout)
+│   ├── contact/page.tsx    # Contact     →  /contact
 │   ├── service/1/page.tsx  # Service    →  /service/1 (former product)
 │   └── services/page.tsx   # Services   →  /services (dedicated page)
 │
@@ -52,44 +51,17 @@ src/
 
 ---
 
-### 2. About Us — `/about`
-**File:** `src/app/about/page.tsx` · **Rendering:** Client Component (`"use client"`)
-
-| Section Order | Description |
-|:---:|:---|
-| 1 | **Header** |
-| 2 | **Hero** — Badge ("Our Mission"), heading, description. Gradient background. |
-| 3 | **Story** — 2-col grid: image with "Est. 2018" badge + narrative text + 2 CTAs |
-| 4 | **Stats** — Dark full-width bar with 4 stat counters (50k+ users, 99.9%, 45+, 120+) |
-| 5 | **Values** — 3-col grid of value cards with icons |
-| 6 | **Footer** |
-
----
-
-### 6. Services Listing — `/services`
-**File:** `src/app/services/page.tsx` · **Rendering:** Client Component (`"use client"`)
-
-| Section Order | Description |
-|:---:|:---|
-| 1 | **Header** |
-| 2 | **Hero** — Headline ("Explore Our Solutions"), description, pagination dots (matching wireframe). |
-| 3 | **Service List** — Vertical list of detailed service items with images and "READ MORE" links. |
-| 4 | **Footer** |
-
----
-
 ### 3. About Us — `/about-us`
 **File:** `src/app/about-us/page.tsx` · **Rendering:** Client Component (`"use client"`)
 
 | Section Order | Description |
 |:---:|:---|
 | 1 | **Header** |
-| 2 | **Hero Slider** — 2-col layout: image left, text right. 2 featured items with pagination dots. |
-| 3 | **Our Story & Mission** — Centered paragraph section |
-| 4 | **History Cards** — 3 vertical cards with company background |
-| 5 | **Footer** |
-
-**State:** `activeSlide` (number) — controls which featured item is displayed.
+| 2 | **Hero** — Mission-focused headline ("Connecting the World..."), description, and "Our Mission" badge. |
+| 3 | **Story** — "A Journey of Shared Growth" with overlapping image and "Est. 2018" indicator. |
+| 4 | **Stats** — Four key statistical blocks (Partners, Presence, Projects, Experts). |
+| 5 | **Values** — "Our Core Values" section with three descriptive cards and icons. |
+| 6 | **Footer** |
 
 ---
 

@@ -4,169 +4,189 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import Placeholder from '@/components/Placeholder';
-import { useState } from 'react';
 import Link from 'next/link';
 
-const FEATURED_ITEMS = [
+const VALUES = [
   {
-    title: "Lorem ipsum dolor sit amet",
-    description: "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=1200"
+    title: "Excellence in Trade",
+    description: "We strive for excellence in every transaction, ensuring the highest standards of quality and reliability for our global partners.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    )
   },
   {
-    title: "Duis aute irure dolor in",
-    description: "Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    image: "https://images.unsplash.com/photo-1550254478-ead40cc54513?auto=format&fit=crop&q=80&w=1200"
+    title: "Global Reach",
+    description: "Our expansive network connects markets across continents, bridging the gap between local producers and international consumers.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    )
+  },
+  {
+    title: "Integrity & Trust",
+    description: "Transparency and ethical practices are at the heart of everything we do, building long-lasting relationships based on mutual trust.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    )
   }
 ];
 
-const CONTENT_CARDS = [
-  {
-    title: "Sed ut perspiciatis unde omnis",
-    description: "Iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-    author: "Lorem Ipsum",
-    date: "10 Oct 21",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=600"
-  },
-  {
-    title: "Nemo enim ipsam voluptatem quia",
-    description: "Voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.",
-    author: "Dolor Sit",
-    date: "12 Oct 21",
-    image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=600"
-  },
-  {
-    title: "Ut enim ad minima veniam",
-    description: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.",
-    author: "Amet Consectetur",
-    date: "15 Oct 21",
-    image: "https://images.unsplash.com/photo-1550254478-ead40cc54513?auto=format&fit=crop&q=80&w=600"
-  }
+const STATS = [
+  { label: "Active Partners", value: "500+" },
+  { label: "Global Presence", value: "45+" },
+  { label: "Successful Projects", value: "1.2k+" },
+  { label: "Dedicated Experts", value: "150+" }
 ];
 
-export default function DiscoverPage() {
-  const [activeSlide, setActiveSlide] = useState(0);
-
+export default function AboutUsPage() {
   return (
     <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: 'var(--bg-primary)' }}>
       <Header />
 
-      {/* Hero Slider Section */}
-      <section className="hero-section" style={{ background: 'var(--bg-secondary)', isolation: 'isolate' }}>
-        <div className="container">
-          <div className="grid-responsive-2" style={{ alignItems: 'center' }}>
-            
-            {/* Left: Product Image */}
-            <RevealOnScroll className="reveal-left">
-              <div style={{ aspectRatio: '16/9', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
-                <Placeholder ratio="16/9" />
-              </div>
-            </RevealOnScroll>
- 
-            {/* Right: Text Content */}
-            <div className="flex flex-col items-start-md" style={{ gap: '1.5rem' }}>
-              <RevealOnScroll className="reveal-right">
-                <h1 style={{ color: 'var(--text-primary)' }}>
-                  About Our Network
-                </h1>
-              </RevealOnScroll>
-              <RevealOnScroll className="reveal-right" delay={100}>
-                <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  {FEATURED_ITEMS[activeSlide].description}
-                </p>
-              </RevealOnScroll>
-              <RevealOnScroll className="reveal-right" delay={200}>
-                <button className="btn btn-primary" style={{ alignSelf: 'flex-start', padding: '1rem 3rem' }}>
-                  Learn More
-                </button>
-              </RevealOnScroll>
-            </div>
-          </div>
- 
-          {/* Pagination Dots */}
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', marginTop: '3rem' }}>
-            {FEATURED_ITEMS.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setActiveSlide(idx)}
-                style={{
-                  width: activeSlide === idx ? '24px' : '8px',
-                  height: '8px',
-                  borderRadius: '4px',
-                  background: activeSlide === idx ? 'var(--accent-blue)' : 'var(--border-medium)',
-                  border: 'none',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease'
-                }}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Introductory Section */}
-      <section style={{ padding: '6rem 0', textAlign: 'center' }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
+      {/* Hero Section */}
+      <section className="hero-section" style={{ 
+        background: 'linear-gradient(135deg, rgba(73, 102, 175, 0.05) 0%, var(--bg-secondary) 100%)',
+        textAlign: 'center',
+        borderBottom: '1px solid var(--border-light)',
+        isolation: 'isolate',
+        padding: '10rem 0 6rem'
+      }}>
+        <div className="container" style={{ maxWidth: '900px' }}>
           <RevealOnScroll className="reveal-up">
-            <h3 style={{ marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
-              Our Story & Mission
-            </h3>
+            <span className="badge">Our Mission</span>
           </RevealOnScroll>
           <RevealOnScroll className="reveal-up" delay={100}>
-            <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-              Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            <h1 style={{ color: 'var(--text-primary)', marginBottom: '2rem', fontSize: '3.5rem', fontWeight: 800 }}>
+              Connecting the World Through Seamless Trade
+            </h1>
+          </RevealOnScroll>
+          <RevealOnScroll className="reveal-up" delay={200}>
+            <p style={{ fontSize: '1.25rem', lineHeight: 1.6, color: 'var(--text-secondary)' }}>
+              We are dedicated to revolutionizing the global supply chain, empowering businesses to scale across borders with confidence and efficiency.
             </p>
           </RevealOnScroll>
         </div>
       </section>
 
-      {/* Vertical Content Cards */}
-      <section style={{ padding: '2rem 0 8rem' }}>
-        <div className="container" style={{ maxWidth: '1000px', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
-          {CONTENT_CARDS.map((card, i) => (
-            <RevealOnScroll key={i} className="reveal-up" delay={i * 100}>
-              <div 
-                className="content-card flex flex-col-md gap-md"
-                style={{ 
-                  alignItems: 'center',
-                  background: 'var(--bg-primary)',
-                  transition: 'transform 0.3s ease'
-                }}
-              >
-                {/* Image Left */}
-                <div style={{ width: '100%', maxWidth: '400px', aspectRatio: '4/3', borderRadius: 'var(--radius-md)', overflow: 'hidden', border: '1px solid var(--border-light)' }}>
-                  <Placeholder ratio="4/3" />
-                </div>
+      {/* Story Section */}
+      <section style={{ padding: '8rem 0' }}>
+        <div className="container grid-responsive-2" style={{ alignItems: 'center' }}>
+          <RevealOnScroll className="reveal-left">
+            <div style={{ position: 'relative' }}>
+              <div style={{ 
+                aspectRatio: '5/4', 
+                borderRadius: 'var(--radius-lg)', 
+                overflow: 'hidden', 
+                boxShadow: 'var(--shadow-lg)',
+                border: '1px solid var(--border-light)'
+              }}>
+                <img 
+                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200" 
+                  alt="Our Office" 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                />
+              </div>
+              <div style={{ 
+                position: 'absolute', 
+                bottom: '-2rem', 
+                right: '-2rem', 
+                background: 'var(--accent-blue)', 
+                color: 'white', 
+                padding: '2rem', 
+                borderRadius: 'var(--radius-md)',
+                boxShadow: 'var(--shadow-md)',
+                fontWeight: 700,
+                fontSize: '1.5rem'
+              }}>
+                Est. 2018
+              </div>
+            </div>
+          </RevealOnScroll>
 
-                {/* Text Content Right */}
-                <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  <h3 style={{ color: 'var(--text-primary)' }}>{card.title}</h3>
-                  <p style={{ color: 'var(--text-secondary)' }}>{card.description}</p>
-                  
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--text-tertiary)', fontSize: '0.875rem' }}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                      <span>{card.date}, by {card.author}</span>
-                    </div>
-                    <Link href="#" style={{ color: 'var(--accent-blue)', fontWeight: 700, fontSize: '0.875rem', letterSpacing: '0.05em' }}>
-                      READ MORE
-                    </Link>
-                  </div>
-                </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', paddingLeft: '2rem' }}>
+            <RevealOnScroll className="reveal-right">
+              <h2 style={{ color: 'var(--text-primary)', fontSize: '2.5rem', fontWeight: 800 }}>A Journey of Shared Growth</h2>
+            </RevealOnScroll>
+            <RevealOnScroll className="reveal-right" delay={100}>
+              <p style={{ lineHeight: 1.8, fontSize: '1.125rem', color: 'var(--text-secondary)' }}>
+                Founded in 2018, our network was built on the belief that trade should be accessible, transparent, and mutually beneficial. What started as a small team has grown into a global network of dedicated professionals working towards a common goal.
+              </p>
+              <p style={{ lineHeight: 1.8, fontSize: '1.125rem', marginTop: '1.5rem', color: 'var(--text-secondary)' }}>
+                We combine deep industry expertise with cutting-edge technology to navigate the complexities of international commerce, ensuring that your business stays ahead of the curve.
+              </p>
+            </RevealOnScroll>
+            <RevealOnScroll className="reveal-right" delay={200}>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <Link href="/contact" className="btn btn-primary">Work With Us</Link>
+                <Link href="/services" className="btn btn-outline">Explore Solutions</Link>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section style={{ padding: '6rem 0', background: 'var(--bg-secondary)', borderTop: '1px solid var(--border-light)', borderBottom: '1px solid var(--border-light)' }}>
+        <div className="container grid-responsive-4" style={{ textAlign: 'center' }}>
+          {STATS.map((stat, i) => (
+            <RevealOnScroll key={i} className="reveal-up" delay={i * 100}>
+              <div>
+                <h3 style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--accent-blue)' }}>{stat.value}</h3>
+                <p style={{ color: 'var(--text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '0.875rem' }}>{stat.label}</p>
               </div>
             </RevealOnScroll>
           ))}
         </div>
       </section>
 
-      <Footer />
+      {/* Values Section */}
+      <section style={{ padding: '8rem 2rem', background: 'var(--bg-primary)' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+            <RevealOnScroll className="reveal-up">
+              <h2 style={{ fontSize: '2.5rem', color: 'var(--text-primary)', marginBottom: '1rem', fontWeight: 800 }}>Our Core Values</h2>
+            </RevealOnScroll>
+            <RevealOnScroll className="reveal-up" delay={100}>
+              <p style={{ maxWidth: '600px', margin: '0 auto', color: 'var(--text-secondary)' }}>Guided by our principles, we deliver value to our clients and partners around the world.</p>
+            </RevealOnScroll>
+          </div>
 
-      <style jsx>{`
-        .content-card:hover {
-          transform: translateY(-5px);
-        }
-      `}</style>
+          <div className="grid-responsive-3">
+            {VALUES.map((val, i) => (
+              <RevealOnScroll key={i} className="reveal-up" delay={i * 150}>
+                <div style={{ 
+                  padding: '3rem', 
+                  background: 'var(--bg-secondary)', 
+                  borderRadius: 'var(--radius-lg)', 
+                  border: '1px solid var(--border-light)',
+                  textAlign: 'center',
+                  transition: 'transform 0.3s ease',
+                  cursor: 'default'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-10px)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                >
+                  <div style={{ 
+                    width: '64px', height: '64px', 
+                    borderRadius: '16px', 
+                    background: 'var(--accent-blue)', 
+                    color: 'white', 
+                    display: 'grid', 
+                    placeItems: 'center', 
+                    margin: '0 auto 2rem',
+                    boxShadow: '0 8px 16px rgba(73, 102, 175, 0.2)'
+                  }}>
+                    {val.icon}
+                  </div>
+                  <h3 style={{ marginBottom: '1rem', color: 'var(--text-primary)', fontWeight: 700 }}>{val.title}</h3>
+                  <p style={{ lineHeight: 1.6, color: 'var(--text-secondary)' }}>{val.description}</p>
+                </div>
+              </RevealOnScroll>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </main>
   );
 }
