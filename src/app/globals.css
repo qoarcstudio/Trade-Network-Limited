@@ -40,7 +40,8 @@
   --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Dark mode is disabled per user request to ensure theme consistency and fix visibility issues on mobile */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --bg-primary: #0a0a0b;
     --bg-secondary: #121214;
@@ -62,7 +63,7 @@
 
     --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   }
-}
+} */
 
 * {
   box-sizing: border-box;

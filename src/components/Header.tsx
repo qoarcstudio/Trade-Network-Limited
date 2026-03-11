@@ -26,7 +26,7 @@ export default function Header() {
         <nav className="flex items-center hidden-md" style={{ gap: '2rem', fontWeight: 500, color: 'var(--text-primary)', fontSize: '0.9375rem' }}>
           <Link href="/">Home</Link>
           <Link href="/about-us">About Us</Link>
-          <Link href="/#services">Services</Link>
+          <Link href="/services">Services</Link>
           <Link href="/contact">Contact Us</Link>
         </nav>
 
@@ -62,7 +62,7 @@ export default function Header() {
         }}>
           <Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
           <Link href="/about-us" onClick={() => setIsMenuOpen(false)}>About Us</Link>
-          <Link href="/#services" onClick={() => setIsMenuOpen(false)}>Services</Link>
+          <Link href="/services" onClick={() => setIsMenuOpen(false)}>Services</Link>
           <Link href="/contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>
         </div>
       )}

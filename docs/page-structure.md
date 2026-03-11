@@ -16,7 +16,8 @@ src/
 │   ├── about/page.tsx      # Legacy About page (unused in nav)
 │   ├── about-us/page.tsx   # About page →  /about-us (former discover)
 │   ├── contact/page.tsx    # Contact    →  /contact
-│   └── service/1/page.tsx  # Service    →  /service/1 (former product)
+│   ├── service/1/page.tsx  # Service    →  /service/1 (former product)
+│   └── services/page.tsx   # Services   →  /services (dedicated page)
 │
 └── components/
     ├── Header.tsx           # Sticky navbar (desktop + mobile drawer)
@@ -62,6 +63,18 @@ src/
 | 4 | **Stats** — Dark full-width bar with 4 stat counters (50k+ users, 99.9%, 45+, 120+) |
 | 5 | **Values** — 3-col grid of value cards with icons |
 | 6 | **Footer** |
+
+---
+
+### 6. Services Listing — `/services`
+**File:** `src/app/services/page.tsx` · **Rendering:** Client Component (`"use client"`)
+
+| Section Order | Description |
+|:---:|:---|
+| 1 | **Header** |
+| 2 | **Hero** — Headline ("Explore Our Solutions"), description, pagination dots (matching wireframe). |
+| 3 | **Service List** — Vertical list of detailed service items with images and "READ MORE" links. |
+| 4 | **Footer** |
 
 ---
 
@@ -117,7 +130,8 @@ src/
 | **Header** | Client | Sticky, 80px height. Desktop: nav links (Home, About Us, Services, Contact Us). Mobile: hamburger → slide-down drawer. |
 | **Hero** | Server | Full-viewport section with diagonal-line CSS pattern, radial mask, and curvy SVG bottom shape. `isolation: isolate` for correct z-index layering. |
 | **Slider** | Client | 5-slide carousel, auto-advances every 5s via `useEffect` timer. Pagination dots. |
-| **Services** | Client | Horizontal-scroll container with `scrollSnapType`. 8 service cards. Left/right arrow buttons with scroll-state tracking. |
+| **Services Listing** | Client | Dedicated `/services` page with vertical card layout and read-more links. |
+| **Services Section** | Client | Horizontal-scroll container with `scrollSnapType`. 8 service cards on Home page. |
 | **Testimonials** | Client | 3-quote slider with prev/next circular buttons and quote icon. |
 | **ImageGallery** | Server | 4-column responsive grid. Nav arrows hidden on mobile (`hidden-md` class). |
 | **Contact** | Server | Dark CTA banner linking to `/contact`. |
@@ -132,7 +146,7 @@ src/
 | Layer | File | Details |
 |:---|:---|:---|
 | **Design Tokens** | `globals.css` `:root` | Colors (`--bg-primary`, `--accent-blue`, etc.), shadows, radii, transitions |
-| **Dark Mode** | `globals.css` `@media (prefers-color-scheme: dark)` | Overrides token values for dark scheme |
+| **Dark Mode** | `globals.css` | **Disabled**: The `@media (prefers-color-scheme: dark)` block is commented out to ensure theme consistency and fix mobile visibility issues. |
 | **Utility Classes** | `globals.css` | `.flex`, `.grid`, `.container`, `.btn`, `.badge`, `.glass`, `.hidden-md`, `.flex-col-md` |
 | **Responsive** | `globals.css` `@media` | **Tablet** (≤1024px): 4-col → 2-col. **Mobile** (≤768px): all grids → 1-col, hero padding reduced, buttons full-width. |
 | **Animations** | `globals.css` | `@keyframes fadeIn`, `.reveal-up/left/right` with `.is-visible` trigger, `.animate-fade-in` with delay classes |
@@ -146,7 +160,7 @@ src/
 Header Navbar
 ├── Home          →  /
 ├── About Us      →  /about-us
-├── Services      →  /#services
+├── Services      →  /services
 └── Contact Us    →  /contact
 
 Internal Links
