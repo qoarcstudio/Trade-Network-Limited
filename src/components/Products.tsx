@@ -145,16 +145,25 @@ export default function Products() {
 
                 {/* Product Info */}
                 <div style={{ padding: '0 0.5rem' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.5rem' }}>
-                    <h3 style={{ fontSize: '1.25rem', color: 'var(--text-primary)', fontWeight: 700 }}>{product.name}</h3>
-                    <span style={{ fontWeight: 700, color: 'var(--accent-blue)', fontSize: '1.125rem' }}>{product.price}</span>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.25rem' }}>
+                    <h3 style={{ fontSize: '1rem', color: '#13171a', fontWeight: 600 }}>Product name</h3>
+                    <span style={{ fontWeight: 600, color: '#13171a', fontSize: '1rem' }}>$69</span>
                   </div>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem', marginBottom: '1.5rem' }}>
-                    {product.variant} Edition
+                  <p style={{ color: '#697077', fontSize: '0.875rem', marginBottom: '1rem' }}>
+                    Variant
                   </p>
 
-                  <button className="btn btn-outline" style={{ width: '100%', borderRadius: '8px', padding: '0.8rem' }}>
-                    Quick Add
+                  <button className="btn" style={{ 
+                    width: '100%', 
+                    borderRadius: '30px', 
+                    padding: '0.7rem', 
+                    border: '1px solid #dde1e6',
+                    background: 'transparent',
+                    fontSize: '0.875rem',
+                    fontWeight: 600,
+                    color: '#13171a'
+                  }}>
+                    Add to Cart
                   </button>
                 </div>
               </div>
@@ -162,13 +171,40 @@ export default function Products() {
           ))}
         </div>
 
-        <RevealOnScroll className="reveal-up" delay={400}>
-          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '4rem' }}>
-            <Link href="/products" className="btn btn-secondary" style={{ padding: '1rem 3rem' }}>
-              View Full Collection
-            </Link>
+          <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
+             <button 
+                onClick={() => scroll('left')}
+                disabled={!canScrollLeft}
+                style={{ 
+                  width: '40px', height: '40px', 
+                  borderRadius: '50%', 
+                  border: '1px solid #dde1e6', 
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  backgroundColor: 'transparent',
+                  color: '#13171a',
+                  cursor: canScrollLeft ? 'pointer' : 'default',
+                  opacity: canScrollLeft ? 1 : 0.3
+               }}
+             >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+             </button>
+             <button 
+                onClick={() => scroll('right')}
+                disabled={!canScrollRight}
+                style={{ 
+                  width: '40px', height: '40px', 
+                  borderRadius: '50%', 
+                  border: '1px solid #dde1e6', 
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  backgroundColor: 'transparent',
+                  color: '#13171a',
+                  cursor: canScrollRight ? 'pointer' : 'default',
+                  opacity: canScrollRight ? 1 : 0.3
+               }}
+             >
+               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+             </button>
           </div>
-        </RevealOnScroll>
 
       </div>
       

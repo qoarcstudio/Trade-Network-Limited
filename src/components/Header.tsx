@@ -12,18 +12,22 @@ export default function Header() {
         
         {/* Logo Left */}
         <div style={{ display: 'flex', alignItems: 'center' }}>
-           <div style={{ display: 'flex', alignItems: 'center', background: '#f5f5f5', padding: '0.5rem 1rem', borderRadius: '4px', gap: '0.5rem' }}>
-             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-             <span style={{ fontWeight: 800, fontSize: '0.875rem', letterSpacing: '0.05em', color: '#121212' }}>Trade Network Limited</span>
-           </div>
+           <button style={{ 
+             display: 'flex', alignItems: 'center', background: '#f5f5f5', 
+             padding: '0.6rem 1.25rem', borderRadius: '4px', gap: '0.5rem',
+             border: 'none', cursor: 'pointer', color: '#13171a'
+           }}>
+             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+             <span style={{ fontWeight: 800, fontSize: '0.9rem', letterSpacing: '0.05em' }}>LOGO</span>
+           </button>
         </div>
 
         {/* Center Nav (Desktop) */}
-        <nav className="flex items-center hidden-md" style={{ gap: '2.5rem', fontWeight: 600, color: 'var(--text-secondary)', fontSize: '0.875rem' }}>
+        <nav className="flex items-center hidden-md" style={{ gap: '2rem', fontWeight: 500, color: '#13171a', fontSize: '0.9375rem' }}>
           <Link href="/">Home</Link>
+          <Link href="/discover">Discover</Link>
           <Link href="/about">About Us</Link>
-          <Link href="/discover">Products</Link>
-          <Link href="/contact">Contact Us</Link>
+          <Link href="/contact">Contact</Link>
         </nav>
 
         {/* Hamburger Menu Icon (Mobile) */}
@@ -45,8 +49,21 @@ export default function Header() {
           }
         `}</style>
 
-        {/* Icons Right - Spacer for Desktop */}
-        <div className="hidden-md" style={{ width: '120px' }}></div>
+        {/* Icons Right */}
+        <div className="flex items-center gap-6 hidden-md">
+          <button style={{ position: 'relative', background: 'none', border: 'none', cursor: 'pointer', color: '#13171a' }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span style={{ 
+              position: 'absolute', top: '-8px', right: '-8px', 
+              background: '#13171a', color: '#fff', fontSize: '10px', 
+              width: '18px', height: '18px', borderRadius: '50%', 
+              display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' 
+            }}>2</span>
+          </button>
+          <button style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#13171a' }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav Drawer */}

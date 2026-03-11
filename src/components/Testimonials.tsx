@@ -35,19 +35,18 @@ export default function Testimonials() {
       <div className="container flex flex-col items-center">
         
         <RevealOnScroll className="reveal-up">
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <span className="badge">Testimonials</span>
-            <h2 style={{ color: 'var(--text-primary)', marginBottom: '1rem' }}>What People Say</h2>
-            <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
-              Discover why businesses trust Trade Network Limited for their commerce and trade solutions.
+          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+            <h2 style={{ color: '#13171a', marginBottom: '1rem', fontSize: '2.5rem', fontWeight: 700 }}>What our clients have to say</h2>
+            <p style={{ color: '#697077', maxWidth: '600px', margin: '0 auto', fontSize: '0.875rem' }}>
+              Lorem ipsum dolor sit amet consectetur adipiscing elit mattis sit phasellus mollis sit aliquam sit nullam.
             </p>
           </div>
         </RevealOnScroll>
 
         {/* Quote Icon */}
         <RevealOnScroll className="reveal-up" delay={200}>
-          <div style={{ color: '#b3bed1', marginBottom: '2rem' }}>
-             <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          <div style={{ color: '#c1c7cd', marginBottom: '2rem' }}>
+             <svg width="56" height="56" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
           </div>
         </RevealOnScroll>
 
@@ -58,10 +57,10 @@ export default function Testimonials() {
              <button onClick={prevSlide} style={{ 
                 width: '40px', height: '40px', 
                 borderRadius: '50%', 
-                border: '1px solid var(--border-medium)', 
+                border: '1px solid #dde1e6', 
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 backgroundColor: 'transparent',
-                color: 'var(--text-secondary)',
+                color: '#697077',
                 cursor: 'pointer',
                 flexShrink: 0
              }}>
@@ -73,11 +72,11 @@ export default function Testimonials() {
               <RevealOnScroll className="reveal-up" delay={400}>
                 <p className="animate-fade-in" key={`text-${currentSlide}`} style={{ 
                    fontSize: '1.25rem', 
-                   color: '#5b6b80', 
-                   fontWeight: 600, 
+                   color: '#13171a', 
+                   fontWeight: 500, 
                    lineHeight: 1.6,
                    marginBottom: '2rem',
-                   maxWidth: '600px'
+                   maxWidth: '800px'
                 }}>
                    {testimonials[currentSlide].text}
                 </p>
@@ -95,18 +94,18 @@ export default function Testimonials() {
            </div>
 
            <RevealOnScroll className="reveal-right" delay={300}>
-             <button onClick={nextSlide} style={{ 
-                width: '40px', height: '40px', 
-                borderRadius: '50%', 
-                backgroundColor: '#5b6b80', 
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                border: 'none',
-                color: 'white',
-                cursor: 'pointer',
-                flexShrink: 0
-             }}>
-               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-             </button>
+                <button onClick={nextSlide} style={{ 
+                   width: '40px', height: '40px', 
+                   borderRadius: '50%', 
+                   backgroundColor: '#697077', 
+                   display: 'flex', alignItems: 'center', justifyContent: 'center',
+                   border: 'none',
+                   color: 'white',
+                   cursor: 'pointer',
+                   flexShrink: 0
+                }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
            </RevealOnScroll>
 
         </div>
