@@ -48,11 +48,11 @@ export default function DiscoverPage() {
   const [activeSlide, setActiveSlide] = useState(0);
 
   return (
-    <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#ffffff' }}>
+    <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#ffffff', colorScheme: 'light' }}>
       <Header />
 
       {/* Hero Slider Section */}
-      <section className="hero-section" style={{ background: 'var(--bg-primary)' }}>
+      <section className="hero-section" style={{ background: '#f0f4f8', isolation: 'isolate' }}>
         <div className="container">
           <div className="grid-responsive-2" style={{ alignItems: 'center' }}>
             

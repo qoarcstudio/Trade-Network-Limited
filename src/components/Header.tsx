@@ -25,9 +25,9 @@ export default function Header() {
         {/* Center Nav (Desktop) */}
         <nav className="flex items-center hidden-md" style={{ gap: '2rem', fontWeight: 500, color: '#13171a', fontSize: '0.9375rem' }}>
           <Link href="/">Home</Link>
-          <Link href="/discover">Discover</Link>
           <Link href="/about">About Us</Link>
-          <Link href="/contact">Contact</Link>
+          <Link href="/discover">Services</Link>
+          <Link href="/contact">Contact Us</Link>
         </nav>
 
         {/* Hamburger Menu Icon (Mobile) */}
@@ -49,21 +49,7 @@ export default function Header() {
           }
         `}</style>
 
-        {/* Icons Right */}
-        <div className="flex items-center gap-6 hidden-md">
-          <button style={{ position: 'relative', background: 'none', border: 'none', cursor: 'pointer', color: '#13171a' }}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-            <span style={{ 
-              position: 'absolute', top: '-8px', right: '-8px', 
-              background: '#13171a', color: '#fff', fontSize: '10px', 
-              width: '18px', height: '18px', borderRadius: '50%', 
-              display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' 
-            }}>2</span>
-          </button>
-          <button style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#13171a' }}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </button>
-        </div>
+
       </div>
 
       {/* Mobile Nav Drawer */}
@@ -76,7 +62,7 @@ export default function Header() {
         }}>
           <Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
           <Link href="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link>
-          <Link href="/discover" onClick={() => setIsMenuOpen(false)}>Products</Link>
+          <Link href="/discover" onClick={() => setIsMenuOpen(false)}>Services</Link>
           <Link href="/contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>
         </div>
       )}

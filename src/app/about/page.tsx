@@ -40,14 +40,15 @@ const STATS = [
 
 export default function AboutPage() {
   return (
-    <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: 'var(--bg-primary)' }}>
+    <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#ffffff', colorScheme: 'light' }}>
       <Header />
 
       {/* Hero Section */}
       <section className="hero-section" style={{ 
-        background: 'linear-gradient(135deg, rgba(73, 102, 175, 0.05) 0%, rgba(255, 255, 255, 0) 100%)',
+        background: 'linear-gradient(135deg, rgba(73, 102, 175, 0.05) 0%, #f8fafd 100%)',
         textAlign: 'center',
-        borderBottom: '1px solid var(--border-light)'
+        borderBottom: '1px solid var(--border-light)',
+        isolation: 'isolate'
       }}>
         <div className="container" style={{ maxWidth: '900px' }}>
           <RevealOnScroll className="reveal-up">
@@ -150,7 +151,7 @@ export default function AboutPage() {
               <RevealOnScroll key={i} className="reveal-up" delay={i * 150}>
                 <div style={{ 
                   padding: '3rem', 
-                  background: 'var(--bg-primary)', 
+                  background: '#f8fafd', 
                   borderRadius: 'var(--radius-lg)', 
                   border: '1px solid var(--border-light)',
                   textAlign: 'center'
