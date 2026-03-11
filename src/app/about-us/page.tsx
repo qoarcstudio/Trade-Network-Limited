@@ -48,11 +48,11 @@ export default function DiscoverPage() {
   const [activeSlide, setActiveSlide] = useState(0);
 
   return (
-    <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#ffffff', colorScheme: 'light' }}>
+    <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: 'var(--bg-primary)' }}>
       <Header />
 
       {/* Hero Slider Section */}
-      <section className="hero-section" style={{ background: '#f0f4f8', isolation: 'isolate' }}>
+      <section className="hero-section" style={{ background: 'var(--bg-secondary)', isolation: 'isolate' }}>
         <div className="container">
           <div className="grid-responsive-2" style={{ alignItems: 'center' }}>
             
@@ -66,8 +66,8 @@ export default function DiscoverPage() {
             {/* Right: Text Content */}
             <div className="flex flex-col items-start-md" style={{ gap: '1.5rem' }}>
               <RevealOnScroll className="reveal-right">
-                <h1 style={{ color: 'var(--accent-dark)' }}>
-                  {FEATURED_ITEMS[activeSlide].title}
+                <h1 style={{ color: 'var(--text-primary)' }}>
+                  About Our Network
                 </h1>
               </RevealOnScroll>
               <RevealOnScroll className="reveal-right" delay={100}>
@@ -108,8 +108,8 @@ export default function DiscoverPage() {
       <section style={{ padding: '6rem 0', textAlign: 'center' }}>
         <div className="container" style={{ maxWidth: '800px' }}>
           <RevealOnScroll className="reveal-up">
-            <h3 style={{ marginBottom: '0.5rem', color: 'var(--accent-dark)' }}>
-              Lorem ipsum dolor sit amet
+            <h3 style={{ marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
+              Our Story & Mission
             </h3>
           </RevealOnScroll>
           <RevealOnScroll className="reveal-up" delay={100}>
@@ -130,7 +130,7 @@ export default function DiscoverPage() {
                 className="content-card flex flex-col-md gap-md"
                 style={{ 
                   alignItems: 'center',
-                  background: '#ffffff',
+                  background: 'var(--bg-primary)',
                   transition: 'transform 0.3s ease'
                 }}
               >
@@ -141,8 +141,8 @@ export default function DiscoverPage() {
 
                 {/* Text Content Right */}
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  <h3 style={{ color: 'var(--accent-dark)' }}>{card.title}</h3>
-                  <p>{card.description}</p>
+                  <h3 style={{ color: 'var(--text-primary)' }}>{card.title}</h3>
+                  <p style={{ color: 'var(--text-secondary)' }}>{card.description}</p>
                   
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--text-tertiary)', fontSize: '0.875rem' }}>

@@ -5,14 +5,14 @@ export default function ImageGallery() {
   const items = [1, 2, 3, 4];
 
   return (
-    <section id="gallery" style={{ padding: '8rem 0', background: '#ffffff' }}>
+    <section id="gallery" style={{ padding: '8rem 0', background: 'var(--bg-primary)' }}>
       <div className="container">
         
         <div className="flex justify-between items-center flex-col-md items-start-md gap-md" style={{ marginBottom: '4rem' }}>
           <div style={{ textAlign: 'left' }}>
             <RevealOnScroll className="reveal-up">
-              <span className="badge" style={{ background: '#f0f4ff', color: '#4966af', padding: '0.5rem 1rem', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '1.5rem', display: 'inline-block' }}>New Arrivals</span>
-              <h2 style={{ fontSize: '3rem', fontWeight: 800, color: '#121212', marginBottom: '1rem', letterSpacing: '-0.02em' }}>
+              <span className="badge" style={{ background: 'var(--bg-tertiary)', color: 'var(--accent-blue)', padding: '0.5rem 1rem', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '1.5rem', display: 'inline-block' }}>New Arrivals</span>
+              <h2 style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '1rem', letterSpacing: '-0.02em' }}>
                 Our Gallery
               </h2>
             </RevealOnScroll>
@@ -24,10 +24,10 @@ export default function ImageGallery() {
           </div>
           
           <div className="hidden-md" style={{ display: 'flex', gap: '1rem', marginBottom: '1rem', alignSelf: 'flex-start' }}>
-             <button style={{ width: '48px', height: '48px', borderRadius: '50%', border: '1px solid #e1e8f0', display: 'grid', placeItems: 'center', background: 'white' }}>
+             <button style={{ width: '48px', height: '48px', borderRadius: '50%', border: '1px solid var(--border-medium)', display: 'grid', placeItems: 'center', background: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
              </button>
-             <button style={{ width: '48px', height: '48px', borderRadius: '50%', background: '#121212', color: 'white', border: 'none', display: 'grid', placeItems: 'center' }}>
+             <button style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'var(--text-primary)', color: 'var(--bg-primary)', border: 'none', display: 'grid', placeItems: 'center' }}>
                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
              </button>
           </div>
@@ -36,7 +36,7 @@ export default function ImageGallery() {
         <div className="grid-responsive-4" style={{ marginBottom: '5rem' }}>
           {[1, 2, 3, 4].map((i) => (
             <RevealOnScroll key={i} className="reveal-up" delay={i * 100}>
-                <div style={{ border: '1px solid #e1e8f0', borderRadius: '8px', overflow: 'hidden' }}>
+                <div style={{ border: '1px solid var(--border-medium)', borderRadius: '8px', overflow: 'hidden' }}>
                     <Placeholder ratio="1/1" text="IMAGE PLACEHOLDER" />
                 </div>
             </RevealOnScroll>

@@ -13,16 +13,16 @@ src/
 │   ├── layout.tsx          # Root layout (HTML shell, Outfit font, global CSS)
 │   ├── globals.css         # Design tokens, utilities, responsive breakpoints
 │   ├── page.tsx            # Home page  →  /
-│   ├── about/page.tsx      # About page →  /about
-│   ├── discover/page.tsx   # Services   →  /discover
+│   ├── about/page.tsx      # Legacy About page (unused in nav)
+│   ├── about-us/page.tsx   # About page →  /about-us (former discover)
 │   ├── contact/page.tsx    # Contact    →  /contact
-│   └── product/1/page.tsx  # Product    →  /product/1
+│   └── service/1/page.tsx  # Service    →  /service/1 (former product)
 │
 └── components/
     ├── Header.tsx           # Sticky navbar (desktop + mobile drawer)
     ├── Hero.tsx             # Full-viewport hero with diagonal-line pattern
     ├── Slider.tsx           # Auto-advancing content slider (5s interval)
-    ├── Products.tsx         # Horizontal-scroll product carousel
+    ├── Services.tsx         # Services carousel (former Products)
     ├── Testimonials.tsx     # Client quote slider with prev/next controls
     ├── ImageGallery.tsx     # 4-column gallery grid with nav arrows
     ├── Contact.tsx          # Dark CTA banner ("Ready to grow?")
@@ -43,7 +43,7 @@ src/
 | 1 | `Header`         | Sticky navbar |
 | 2 | `Hero`           | Headline, subtitle, "Get Started" CTA |
 | 3 | `Slider`         | Image + text carousel (5 slides, auto-advances) |
-| 4 | `Products`       | Horizontal-scroll product cards (8 items) |
+| 4 | `Services`       | Horizontal-scroll service cards (8 items) |
 | 5 | `Testimonials`   | Client quotes slider (3 testimonials) |
 | 6 | `ImageGallery`   | 4-col image grid with prev/next arrows (hidden on mobile) |
 | 7 | `Contact`        | Dark-background CTA section |
@@ -65,15 +65,15 @@ src/
 
 ---
 
-### 3. Services — `/discover`
-**File:** `src/app/discover/page.tsx` · **Rendering:** Client Component (`"use client"`)
+### 3. About Us — `/about-us`
+**File:** `src/app/about-us/page.tsx` · **Rendering:** Client Component (`"use client"`)
 
 | Section Order | Description |
 |:---:|:---|
 | 1 | **Header** |
 | 2 | **Hero Slider** — 2-col layout: image left, text right. 2 featured items with pagination dots. |
-| 3 | **Intro Text** — Centered paragraph section |
-| 4 | **Content Cards** — 3 vertical cards: image + text + author/date + "READ MORE" link |
+| 3 | **Our Story & Mission** — Centered paragraph section |
+| 4 | **History Cards** — 3 vertical cards with company background |
 | 5 | **Footer** |
 
 **State:** `activeSlide` (number) — controls which featured item is displayed.
@@ -94,19 +94,19 @@ src/
 
 ---
 
-### 5. Product Detail — `/product/1`
-**File:** `src/app/product/1/page.tsx` · **Rendering:** Client Component (`"use client"`)
+### 5. Service Detail — `/service/1`
+**File:** `src/app/service/1/page.tsx` · **Rendering:** Client Component (`"use client"`)
 
 | Section Order | Description |
 |:---:|:---|
 | 1 | **Header** |
-| 2 | **Breadcrumbs** — Home → Shop → Product Name |
-| 3 | **Product Layout** — 2-col: Image gallery (main + 3 thumbnails) · Product info (price, rating, qty selector, Add to Cart, Buy Now) |
+| 2 | **Breadcrumbs** — Home → Services → Service Name |
+| 3 | **Service Layout** — 2-col: Image gallery · Service info (description, inquiry button) |
 | 4 | **Detail Tabs** — 3 tabs: Description, Specifications, Reviews |
-| 5 | **Related Products** — Reuses `Products` component |
+| 5 | **Related Services** — Reuses `Services` component |
 | 6 | **Footer** |
 
-**State:** `mainImage` (string), `quantity` (number), `activeTab` (string).
+**State:** `mainImage` (string), `activeTab` (string).
 
 ---
 
@@ -117,7 +117,7 @@ src/
 | **Header** | Client | Sticky, 80px height. Desktop: nav links (Home, About Us, Services, Contact Us). Mobile: hamburger → slide-down drawer. |
 | **Hero** | Server | Full-viewport section with diagonal-line CSS pattern, radial mask, and curvy SVG bottom shape. `isolation: isolate` for correct z-index layering. |
 | **Slider** | Client | 5-slide carousel, auto-advances every 5s via `useEffect` timer. Pagination dots. |
-| **Products** | Client | Horizontal-scroll container with `scrollSnapType`. 8 product cards. Left/right arrow buttons with scroll-state tracking. |
+| **Services** | Client | Horizontal-scroll container with `scrollSnapType`. 8 service cards. Left/right arrow buttons with scroll-state tracking. |
 | **Testimonials** | Client | 3-quote slider with prev/next circular buttons and quote icon. |
 | **ImageGallery** | Server | 4-column responsive grid. Nav arrows hidden on mobile (`hidden-md` class). |
 | **Contact** | Server | Dark CTA banner linking to `/contact`. |
@@ -145,14 +145,14 @@ src/
 ```
 Header Navbar
 ├── Home          →  /
-├── About Us      →  /about
-├── Services      →  /discover
+├── About Us      →  /about-us
+├── Services      →  /#services
 └── Contact Us    →  /contact
 
 Internal Links
 ├── Hero CTA      →  (no link, button only)
 ├── Contact CTA   →  /contact
-├── Product Card  →  /product/1
+├── Service Card  →  /service/1
 └── Footer        →  # (placeholder links)
 ```
 

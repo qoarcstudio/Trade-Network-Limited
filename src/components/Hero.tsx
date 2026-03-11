@@ -40,18 +40,18 @@ export default function Hero() {
            preserveAspectRatio="none"
            style={{ position: 'absolute', bottom: 0, left: 0 }}
         >
-          <path fill="#ffffff" d="M0,64C240,128,480,0,720,64C960,128,1200,0,1440,64L1440,120L0,120Z"></path>
+          <path fill="var(--bg-primary)" d="M0,64C240,128,480,0,720,64C960,128,1200,0,1440,64L1440,120L0,120Z"></path>
         </svg>
       </div>
 
       <RevealOnScroll className="reveal-up">
         <div className="container flex flex-col items-center" style={{ maxWidth: '800px' }}>
-          <h1 style={{ color: '#13171a', marginBottom: '1.5rem', letterSpacing: '-0.04em', fontSize: '4.5rem', fontWeight: 700 }}>
+          <h1 style={{ color: 'var(--text-primary)', marginBottom: '1.5rem', letterSpacing: '-0.04em', fontSize: '4.5rem', fontWeight: 700 }}>
             Arcu Suscipit Massa Aliquam Proin Amet
           </h1>
           <p style={{ 
              fontSize: '1rem', 
-             color: '#697077', 
+             color: 'var(--text-secondary)', 
              marginBottom: '3rem', 
              maxWidth: '650px', 
              lineHeight: 1.6

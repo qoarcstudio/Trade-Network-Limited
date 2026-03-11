@@ -7,6 +7,9 @@
   --bg-secondary: #f0f3fa;
   --bg-tertiary: #e1e5ee;
 
+  --header-bg: #ffffff;
+  --card-bg: #ffffff;
+
   --text-primary: #121212;
   --text-secondary: #434343;
   --text-tertiary: #777e91;
@@ -43,9 +46,12 @@
     --bg-secondary: #121214;
     --bg-tertiary: #1e2024;
 
+    --header-bg: #0a0a0b;
+    --card-bg: #121214;
+
     --text-primary: #ffffff;
-    --text-secondary: #a1a1aa;
-    --text-tertiary: #71717a;
+    --text-secondary: #d1d1d6;
+    --text-tertiary: #8e8e93;
 
     --accent-blue: #5d7bc9;
     --accent-blue-hover: #7b94d8;

@@ -31,13 +31,13 @@ export default function Testimonials() {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section style={{ padding: '8rem 2rem', background: '#ffffff', textAlign: 'center' }}>
+    <section style={{ padding: '8rem 2rem', background: 'var(--bg-primary)', textAlign: 'center' }}>
       <div className="container flex flex-col items-center">
         
         <RevealOnScroll className="reveal-up">
           <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-            <h2 style={{ color: '#13171a', marginBottom: '1rem', fontSize: '2.5rem', fontWeight: 700 }}>What our clients have to say</h2>
-            <p style={{ color: '#697077', maxWidth: '600px', margin: '0 auto', fontSize: '0.875rem' }}>
+            <h2 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontSize: '2.5rem', fontWeight: 700 }}>What our clients have to say</h2>
+            <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto', fontSize: '0.875rem' }}>
               Lorem ipsum dolor sit amet consectetur adipiscing elit mattis sit phasellus mollis sit aliquam sit nullam.
             </p>
           </div>
@@ -45,7 +45,7 @@ export default function Testimonials() {
 
         {/* Quote Icon */}
         <RevealOnScroll className="reveal-up" delay={200}>
-          <div style={{ color: '#c1c7cd', marginBottom: '2rem' }}>
+          <div style={{ color: 'var(--border-medium)', marginBottom: '2rem' }}>
              <svg width="56" height="56" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
           </div>
         </RevealOnScroll>
@@ -57,10 +57,10 @@ export default function Testimonials() {
              <button onClick={prevSlide} style={{ 
                 width: '40px', height: '40px', 
                 borderRadius: '50%', 
-                border: '1px solid #dde1e6', 
+                border: '1px solid var(--border-medium)', 
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 backgroundColor: 'transparent',
-                color: '#697077',
+                color: 'var(--text-secondary)',
                 cursor: 'pointer',
                 flexShrink: 0
              }}>
@@ -72,7 +72,7 @@ export default function Testimonials() {
               <RevealOnScroll className="reveal-up" delay={400}>
                 <p className="animate-fade-in" key={`text-${currentSlide}`} style={{ 
                    fontSize: '1.25rem', 
-                   color: '#13171a', 
+                   color: 'var(--text-primary)', 
                    fontWeight: 500, 
                    lineHeight: 1.6,
                    marginBottom: '2rem',
@@ -86,8 +86,8 @@ export default function Testimonials() {
                 <div className="animate-fade-in delay-100" key={`author-${currentSlide}`} style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                     <Placeholder width="40px" height="40px" className="rounded-full" />
                    <div style={{ textAlign: 'left' }}>
-                      <div style={{ fontWeight: 700, color: '#5b6b80', fontSize: '0.875rem' }}>{testimonials[currentSlide].author}</div>
-                      <div style={{ color: '#b3bed1', fontSize: '0.875rem' }}>{testimonials[currentSlide].role}</div>
+                      <div style={{ fontWeight: 700, color: 'var(--text-primary)', fontSize: '0.875rem' }}>{testimonials[currentSlide].author}</div>
+                      <div style={{ color: 'var(--text-tertiary)', fontSize: '0.875rem' }}>{testimonials[currentSlide].role}</div>
                    </div>
                 </div>
               </RevealOnScroll>
@@ -97,10 +97,10 @@ export default function Testimonials() {
                 <button onClick={nextSlide} style={{ 
                    width: '40px', height: '40px', 
                    borderRadius: '50%', 
-                   backgroundColor: '#697077', 
+                   backgroundColor: 'var(--text-secondary)', 
                    display: 'flex', alignItems: 'center', justifyContent: 'center',
                    border: 'none',
-                   color: 'white',
+                   color: 'var(--bg-primary)',
                    cursor: 'pointer',
                    flexShrink: 0
                 }}>

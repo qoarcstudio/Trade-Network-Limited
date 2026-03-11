@@ -4,20 +4,20 @@ import Link from 'next/link';
 import RevealOnScroll from './RevealOnScroll';
 import Placeholder from './Placeholder';
 
-export default function Products() {
+export default function Services() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
-  const products = [
-    { name: "Premium Widget", variant: "Blue", price: "$85" },
-    { name: "Elite Gadget", variant: "Silver", price: "$120" },
-    { name: "Master Tool", variant: "Black", price: "$45" },
-    { name: "Pro Device", variant: "White", price: "$210" },
-    { name: "Smart Gear", variant: "Red", price: "$99" },
-    { name: "Ultra Pack", variant: "Green", price: "$150" },
-    { name: "Zen Set", variant: "Tan", price: "$75" },
-    { name: "Power Unit", variant: "Gray", price: "$300" }
+  const services = [
+    { name: "Premium Widget", variant: "Blue" },
+    { name: "Elite Gadget", variant: "Silver" },
+    { name: "Master Tool", variant: "Black" },
+    { name: "Pro Device", variant: "White" },
+    { name: "Smart Gear", variant: "Red" },
+    { name: "Ultra Pack", variant: "Green" },
+    { name: "Zen Set", variant: "Tan" },
+    { name: "Power Unit", variant: "Gray" }
   ];
 
   const checkScroll = () => {
@@ -44,14 +44,14 @@ export default function Products() {
   };
 
   return (
-    <section id="products" style={{ padding: '8rem 0', background: 'var(--bg-primary)', overflow: 'hidden' }}>
+    <section id="services" style={{ padding: '8rem 0', background: 'var(--bg-primary)', overflow: 'hidden' }}>
       <div className="container">
         
         <RevealOnScroll className="reveal-up">
           <div className="flex justify-between items-center flex-col-md items-start-md gap-md section-header-margin">
             <div>
-              <span className="badge">New Arrivals</span>
-              <h2 style={{ color: 'var(--text-primary)', marginBottom: '0.75rem' }}>Featured Products</h2>
+              <span className="badge">Featured</span>
+              <h2 style={{ color: 'var(--text-primary)', marginBottom: '0.75rem' }}>Our Services</h2>
               <p style={{ maxWidth: '500px' }}>
                 Explore our latest collection of premium tradeCommerce solutions built for modern businesses.
               </p>
@@ -71,7 +71,7 @@ export default function Products() {
                     opacity: canScrollLeft ? 1 : 0.5,
                     transition: 'all var(--transition-medium)'
                  }}
-                 aria-label="Previous products"
+                 aria-label="Previous services"
                >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
                </button>
@@ -89,7 +89,7 @@ export default function Products() {
                     opacity: canScrollRight ? 1 : 0.5,
                     transition: 'all var(--transition-medium)'
                  }}
-                 aria-label="Next products"
+                 aria-label="Next services"
                >
                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                </button>
@@ -113,7 +113,7 @@ export default function Products() {
           }}
           className="hide-scrollbar"
         >
-          {products.map((product, i) => (
+          {services.map((service, i) => (
             <RevealOnScroll 
               key={i} 
               className="reveal-up" 
@@ -126,7 +126,7 @@ export default function Products() {
                 transition: 'transform var(--transition-medium)',
                 cursor: 'pointer'
               }}>
-                {/* Product Image Placeholder */}
+                {/* Image Placeholder */}
                 <div style={{ 
                    width: '100%', 
                    aspectRatio: '1', 
@@ -143,27 +143,26 @@ export default function Products() {
                    <Placeholder ratio="1/1" />
                 </div>
 
-                {/* Product Info */}
+                {/* Info */}
                 <div style={{ padding: '0 0.5rem' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.25rem' }}>
-                    <h3 style={{ fontSize: '1rem', color: '#13171a', fontWeight: 600 }}>Product name</h3>
-                    <span style={{ fontWeight: 600, color: '#13171a', fontSize: '1rem' }}>$69</span>
+                    <h3 style={{ fontSize: '1rem', color: 'var(--text-primary)', fontWeight: 600 }}>{service.name}</h3>
                   </div>
-                  <p style={{ color: '#697077', fontSize: '0.875rem', marginBottom: '1rem' }}>
-                    Variant
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', marginBottom: '1rem' }}>
+                    {service.variant}
                   </p>
 
                   <button className="btn" style={{ 
                     width: '100%', 
                     borderRadius: '30px', 
                     padding: '0.7rem', 
-                    border: '1px solid #dde1e6',
+                    border: '1px solid var(--border-medium)',
                     background: 'transparent',
                     fontSize: '0.875rem',
                     fontWeight: 600,
-                    color: '#13171a'
+                    color: 'var(--text-primary)'
                   }}>
-                    Add to Cart
+                    View Details
                   </button>
                 </div>
               </div>
@@ -178,10 +177,10 @@ export default function Products() {
                 style={{ 
                   width: '40px', height: '40px', 
                   borderRadius: '50%', 
-                  border: '1px solid #dde1e6', 
+                  border: '1px solid var(--border-medium)', 
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   backgroundColor: 'transparent',
-                  color: '#13171a',
+                  color: 'var(--text-primary)',
                   cursor: canScrollLeft ? 'pointer' : 'default',
                   opacity: canScrollLeft ? 1 : 0.3
                }}
@@ -194,10 +193,10 @@ export default function Products() {
                 style={{ 
                   width: '40px', height: '40px', 
                   borderRadius: '50%', 
-                  border: '1px solid #dde1e6', 
+                  border: '1px solid var(--border-medium)', 
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   backgroundColor: 'transparent',
-                  color: '#13171a',
+                  color: 'var(--text-primary)',
                   cursor: canScrollRight ? 'pointer' : 'default',
                   opacity: canScrollRight ? 1 : 0.3
                }}

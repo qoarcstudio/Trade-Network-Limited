@@ -40,12 +40,12 @@ const STATS = [
 
 export default function AboutPage() {
   return (
-    <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#ffffff', colorScheme: 'light' }}>
+    <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: 'var(--bg-primary)' }}>
       <Header />
 
       {/* Hero Section */}
       <section className="hero-section" style={{ 
-        background: 'linear-gradient(135deg, rgba(73, 102, 175, 0.05) 0%, #f8fafd 100%)',
+        background: 'linear-gradient(135deg, rgba(73, 102, 175, 0.05) 0%, var(--bg-secondary) 100%)',
         textAlign: 'center',
         borderBottom: '1px solid var(--border-light)',
         isolation: 'isolate'
@@ -55,12 +55,12 @@ export default function AboutPage() {
             <span className="badge">Our Mission</span>
           </RevealOnScroll>
           <RevealOnScroll className="reveal-up" delay={100}>
-            <h1 style={{ color: 'var(--accent-dark)', marginBottom: '2rem' }}>
+            <h1 style={{ color: 'var(--text-primary)', marginBottom: '2rem' }}>
               Lorem ipsum dolor sit amet consectetur
             </h1>
           </RevealOnScroll>
           <RevealOnScroll className="reveal-up" delay={200}>
-            <p style={{ fontSize: '1.25rem', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '1.25rem', lineHeight: 1.6, color: 'var(--text-secondary)' }}>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
             </p>
           </RevealOnScroll>
@@ -100,13 +100,13 @@ export default function AboutPage() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
             <RevealOnScroll className="reveal-right">
-              <h2 style={{ color: 'var(--accent-dark)', fontSize: '2.5rem' }}>Lorem ipsum dolor sit</h2>
+              <h2 style={{ color: 'var(--text-primary)', fontSize: '2.5rem' }}>Lorem ipsum dolor sit</h2>
             </RevealOnScroll>
             <RevealOnScroll className="reveal-right" delay={100}>
-              <p style={{ lineHeight: 1.8, fontSize: '1.125rem' }}>
+              <p style={{ lineHeight: 1.8, fontSize: '1.125rem', color: 'var(--text-secondary)' }}>
                 At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
               </p>
-              <p style={{ lineHeight: 1.8, fontSize: '1.125rem', marginTop: '1.5rem' }}>
+              <p style={{ lineHeight: 1.8, fontSize: '1.125rem', marginTop: '1.5rem', color: 'var(--text-secondary)' }}>
                 Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
               </p>
             </RevealOnScroll>
@@ -127,7 +127,7 @@ export default function AboutPage() {
             <RevealOnScroll key={i} className="reveal-up" delay={i * 100}>
               <div>
                 <h3 style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--accent-blue)' }}>{stat.value}</h3>
-                <p style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '0.875rem' }}>{stat.label}</p>
+                <p style={{ color: 'var(--text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '0.875rem' }}>{stat.label}</p>
               </div>
             </RevealOnScroll>
           ))}
@@ -135,14 +135,14 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section style={{ padding: '8rem 2rem', background: '#fff' }}>
+      <section style={{ padding: '8rem 2rem', background: 'var(--bg-primary)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <RevealOnScroll className="reveal-up">
-              <h2 style={{ fontSize: '2.5rem', color: 'var(--accent-dark)', marginBottom: '1rem' }}>Our Core Values</h2>
+              <h2 style={{ fontSize: '2.5rem', color: 'var(--text-primary)', marginBottom: '1rem' }}>Our Core Values</h2>
             </RevealOnScroll>
             <RevealOnScroll className="reveal-up" delay={100}>
-              <p style={{ maxWidth: '600px', margin: '0 auto' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p style={{ maxWidth: '600px', margin: '0 auto', color: 'var(--text-secondary)' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </RevealOnScroll>
           </div>
 
@@ -151,7 +151,7 @@ export default function AboutPage() {
               <RevealOnScroll key={i} className="reveal-up" delay={i * 150}>
                 <div style={{ 
                   padding: '3rem', 
-                  background: '#f8fafd', 
+                  background: 'var(--bg-secondary)', 
                   borderRadius: 'var(--radius-lg)', 
                   border: '1px solid var(--border-light)',
                   textAlign: 'center'
@@ -168,8 +168,8 @@ export default function AboutPage() {
                   }}>
                     {val.icon}
                   </div>
-                  <h3 style={{ marginBottom: '1rem', color: 'var(--accent-dark)' }}>{val.title}</h3>
-                  <p style={{ lineHeight: 1.6 }}>{val.description}</p>
+                  <h3 style={{ marginBottom: '1rem', color: 'var(--text-primary)' }}>{val.title}</h3>
+                  <p style={{ lineHeight: 1.6, color: 'var(--text-secondary)' }}>{val.description}</p>
                 </div>
               </RevealOnScroll>
             ))}

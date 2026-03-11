@@ -38,7 +38,7 @@ export default function Slider() {
   }, [slides.length]);
 
   return (
-    <section id="slider" style={{ padding: '8rem 0', background: '#ffffff' }}>
+    <section id="slider" style={{ padding: '8rem 0', background: 'var(--bg-primary)' }}>
       <div className="container flex flex-col items-center">
         
         {/* Main Content Area */}
