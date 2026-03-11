@@ -11,7 +11,9 @@ export default function Hero() {
        alignItems: 'center', 
        justifyContent: 'center',
        textAlign: 'center',
-       overflow: 'hidden'
+       overflow: 'hidden',
+       isolation: 'isolate',
+       background: '#f0f4f8'
     }}>
       {/* Diagonal Line Background Pattern */}
       <div style={{ 
